@@ -1,2 +1,4 @@
 *.idea
 *.pyc
+checkpoints/bvlc_alexnet.npy
+.ipynb_checkpoints

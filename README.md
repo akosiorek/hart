@@ -1,10 +1,14 @@
 # Hierarchical Attentive Object Tracking
 
-    This repo contains code for the tracker and the training script to train it on the KITTI tracking dataset. For details on the tracker please see the (arXiv paper)[https://arxiv.org/abs/1706.09262].
+This codebase (in progress) implements the system described in the paper:
 
-### Requirements
-    
-    The code was developed with `tensorflow v0.12r` and needs `scipy`, `numpy`, `pandas`, `tables` and some other packages specified in `requirements.txt`.
+Hierarchical Attentive Object Tracking
+
+[Adam R. Kosiorek](https://www.linkedin.com/in/adamkosiorek/?locale=en_US), [Alex Bewley](http://ori.ox.ac.uk/mrg_people/alex-bewley/), [Ingmar Posner](http://ori.ox.ac.uk/mrg_people/ingmar-posner/)
+
+See [the paper](https://arxiv.org/abs/1706.09262) for more details. Please contact Adam Kosiorek (adamk@robots.ox.ac.uk) if you have any questions.
+
+
 
 # Training on KITTI
 ## Data preparation
