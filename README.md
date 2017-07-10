@@ -4,10 +4,10 @@ This is an official Tensorflow implementation of single object tracking in video
 
 [A. R. Kosiorek](https://www.linkedin.com/in/adamkosiorek/?locale=en_US), [A. Bewley](http://ori.ox.ac.uk/mrg_people/alex-bewley/), [I. Posner](http://ori.ox.ac.uk/mrg_people/ingmar-posner/), ["Hierarchical Attentive Object Tracking", arXiv preprint, arxiv:1706.09262](https://arxiv.org/abs/1706.09262).
 
-* **author**: Adam Kosiorek, Oxford Robotics Institue, University of Oxford
-* **email**: adamk(at)robots.ox.ac.uk
-* **paper**: https://arxiv.org/abs/1706.09262
-* **webpage**: http://ori.ox.ac.uk/
+* **Author**: Adam Kosiorek, Oxford Robotics Institue, University of Oxford
+* **Email**: adamk(at)robots.ox.ac.uk
+* **Paper**: https://arxiv.org/abs/1706.09262
+* **Webpage**: http://ori.ox.ac.uk/
 
 ## Installation
 Install [Tensorflow v1.1](https://www.tensorflow.org/versions/r1.1/install/) and the following dependencies
