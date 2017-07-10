@@ -2,7 +2,7 @@
 
 This is an official Tensorflow implementation of single object tracking in videos by using recurrent attentive recurrent neural networks, as presented in the following paper:
 
-[A. R. Kosiorek](https://www.linkedin.com/in/adamkosiorek/?locale=en_US), [A. Bewley](http://ori.ox.ac.uk/mrg_people/alex-bewley/), [I. Posner](http://ori.ox.ac.uk/mrg_people/ingmar-posner/), ["Hierarchical Attentive Object Tracking", arXiv preprint arxiv:1706.09262](https://arxiv.org/abs/1706.09262). by
+[A. R. Kosiorek](https://www.linkedin.com/in/adamkosiorek/?locale=en_US), [A. Bewley](http://ori.ox.ac.uk/mrg_people/alex-bewley/), [I. Posner](http://ori.ox.ac.uk/mrg_people/ingmar-posner/), ["Hierarchical Attentive Object Tracking", arXiv preprint, arxiv:1706.09262](https://arxiv.org/abs/1706.09262).
 
 * **author**: Adam Kosiorek, Oxford Robotics Institue, University of Oxford
 * **email**: adamk(at)robots.ox.ac.uk
@@ -11,7 +11,7 @@ This is an official Tensorflow implementation of single object tracking in video
 
 ## Installation
 Install [Tensorflow v1.1](https://www.tensorflow.org/versions/r1.1/install/) and the following dependencies
- (using `pip install -r requirements.txt` (preffered) or `pip install [package]`):
+ (using `pip install -r requirements.txt` (preferred) or `pip install [package]`):
 * matplotlib==1.5.3
 * numpy==1.12.1
 * pandas==0.18.1
