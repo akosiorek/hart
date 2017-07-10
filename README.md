@@ -44,6 +44,18 @@ The `scripts/eval_kitti.ipynb` notebook contains the code necessary to prepare (
 * Download AlexNet weights (described in the Training section).
 * Update image and label folder paths in the notebook.
 
+## Citation
+
+If you find this repo useful in your research, please consider citing:
+
+    @article{kosiorek2017hierarchical,
+        title={Hierarchical Attentive Recurrent Tracking},
+        author={Kosiorek, Adam R and Bewley, Alex and Posner, Ingmar},
+        journal={arXiv preprint arXiv:1706.09262},
+        year={2017}
+    }
+
+
 ## License
 
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.
