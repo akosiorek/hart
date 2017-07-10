@@ -1,6 +1,6 @@
-# Hierarchical Attentive Object Tracking
+# Hierarchical Attentive Recurrent Tracking
 
-This is an official Tensorflow implementation of single object tracking in videos by using recurrent attentive recurrent neural networks, as presented in the following paper:
+This is an official Tensorflow implementation of single object tracking in videos by using hierarchical attentive recurrent neural networks, as presented in the following paper:
 
 [A. R. Kosiorek](https://www.linkedin.com/in/adamkosiorek/?locale=en_US), [A. Bewley](http://ori.ox.ac.uk/mrg_people/alex-bewley/), [I. Posner](http://ori.ox.ac.uk/mrg_people/ingmar-posner/), ["Hierarchical Attentive Object Tracking", arXiv preprint, arxiv:1706.09262](https://arxiv.org/abs/1706.09262).
 
