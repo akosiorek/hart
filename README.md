@@ -18,7 +18,7 @@ Install [Tensorflow v1.1](https://www.tensorflow.org/versions/r1.1/install/) and
 * scipy==0.18.1
 
 ## Demo
-The notebook `scripts/demo.ipynb` contains a demo, which shows how to evaluate tracker on an arbitrary image sequence. By default, it runs on images located in `imgs` folder.
+The notebook `scripts/demo.ipynb` contains a demo, which shows how to evaluate tracker on an arbitrary image sequence. By default, it runs on images located in `imgs` folder and uses a pretrained model.
 Before running the demo please download AlexNet weights first (described in the Training section).
 
 
