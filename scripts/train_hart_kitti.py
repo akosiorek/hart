@@ -24,6 +24,7 @@
 # In[1]:
 
 import os
+os.chdir('../')
 
 import numpy as np
 import tensorflow as tf
