@@ -23,6 +23,7 @@
 
 # In[1]:
 
+import _init_paths
 import os
 
 import numpy as np
