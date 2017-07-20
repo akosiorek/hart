@@ -35,7 +35,7 @@ Before running the demo please download AlexNet weights first (described in the 
     * Download the weights from [here](http://www.cs.toronto.edu/~guerzhoy/tf_alexnet/bvlc_alexnet.npy) and put the file in the `checkpoints` folder.
 2. Run
 
-        python scripts/train_kitti.py --img_folder=path/to/image/folder --label_folder=/path/to/label/folder
+        python scripts/train_hart_kitti.py --img_dir=path/to/image/folder --label_dir=/path/to/label/folder
 
 The training script will save model checkpoints in the `checkpoints` folder and report train and test scores every couple of epochs. You can run tensorboard in the `checkpoints` folder to visualise training progress. Training should converge in about 400k iterations, which should take about 3 days. It might take a couple of hours between logging messages, so don't worry.
 
