@@ -2,7 +2,7 @@
 
 This is an official Tensorflow implementation of single object tracking in videos by using hierarchical attentive recurrent neural networks, as presented in the following paper:
 
-[A. R. Kosiorek](http://akosiorek.github.io), [A. Bewley](http://ori.ox.ac.uk/mrg_people/alex-bewley/), [I. Posner](http://ori.ox.ac.uk/mrg_people/ingmar-posner/), ["Hierarchical Attentive Recurrent Tracking", arXiv preprint, arxiv:1706.09262](https://arxiv.org/abs/1706.09262).
+[A. R. Kosiorek](http://akosiorek.github.io), [A. Bewley](http://ori.ox.ac.uk/mrg_people/alex-bewley/), [I. Posner](http://ori.ox.ac.uk/mrg_people/ingmar-posner/), ["Hierarchical Attentive Recurrent Tracking", NIPS 2017](https://arxiv.org/abs/1706.09262).
 
 * **Author**: Adam Kosiorek, Oxford Robotics Institue, University of Oxford
 * **Email**: adamk(at)robots.ox.ac.uk
@@ -48,11 +48,14 @@ The `scripts/eval_kitti.ipynb` notebook contains the code necessary to prepare (
 
 If you find this repo useful in your research, please consider citing:
 
-    @article{kosiorek2017hierarchical,
-        title={Hierarchical Attentive Recurrent Tracking},
-        author={Kosiorek, Adam R and Bewley, Alex and Posner, Ingmar},
-        journal={arXiv preprint arXiv:1706.09262},
-        year={2017}
+    @inproceedings{Kosiorek2017hierarchical,
+       title = {Hierarchical Attentive Recurrent Tracking},
+       author = {Kosiorek, Adam R and Bewley, Alex and Posner, Ingmar},
+       booktitle = {Neural Information Processing Systems},
+       url = {http://www.robots.ox.ac.uk/~mobile/Papers/2017NIPS_AdamKosiorek.pdf},
+       pdf = {http://www.robots.ox.ac.uk/~mobile/Papers/2017NIPS_AdamKosiorek.pdf},
+       year = {2017},
+       month = {December}
     }
 
 
