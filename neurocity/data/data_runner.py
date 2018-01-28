@@ -21,7 +21,7 @@
 
 import threading
 import weakref
-import Queue
+import queue
 
 import tensorflow as tf
 from tensorflow.python.util import nest

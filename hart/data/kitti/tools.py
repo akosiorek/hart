@@ -245,7 +245,7 @@ def read_imgs(arr, paths, img_store):
         for i, p in enumerate(paths):
             arr[i] = img_store[p]
     except Exception as e:
-        print e
+        print(e)
         raise
 
 
@@ -262,7 +262,7 @@ def pad_bbox(bboxes, num_objects):
         for i, b in enumerate(bboxes):
             bbox[i, :b.shape[0]] = b
     except Exception as e:
-        print e
+        print(e)
         raise
 
     return bbox

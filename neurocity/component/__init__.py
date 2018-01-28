@@ -22,13 +22,13 @@ Created on Fri Dec 16 10:32:11 2016
 """
 
 import tensorflow as tf
-from layer import Layer
-from model.model import Model
+from neurocity.component.layer import Layer
+from neurocity.component.model.model import Model
 
 def convert_layer_to_tensor(layer, dtype=None, name=None, as_ref=False):
     if not isinstance(layer, (Layer, Model)):
         return NotImplemented
     return layer.output
-    
-tf.register_tensor_conversion_function((Layer, Model), 
+
+tf.register_tensor_conversion_function((Layer, Model),
                                        convert_layer_to_tensor, 199)

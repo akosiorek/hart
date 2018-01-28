@@ -19,7 +19,7 @@
 # 
 ########################################################################################
 
-from component.model.base import train_mode, test_mode, mode
-from component import loss, layer
-from component.model.model import Model
-from data.data_runner import run_py2py_queue, run_py2tf_queue, start_queue_runners
+from neurocity.component.model.base import train_mode, test_mode, mode
+from neurocity.component import loss, layer
+from neurocity.component.model.model import Model
+from neurocity.data.data_runner import run_py2py_queue, run_py2tf_queue, start_queue_runners

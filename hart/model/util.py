@@ -93,12 +93,12 @@ def try_resume_from_dir(sess, saver, checkpoint_dir, run_name):
         itr = extract_itr_from_modelfile(model_file)
 
         model_file = os.path.join(model_dir, model_file)
-        print 'loading from', model_file
+        print ('loading from', model_file)
         saver.restore(sess, model_file)
 
         return itr
     else:
-        print 'No modefile to resume from. Starting at iter = 0.'
+        print('No modefile to resume from. Starting at iter = 0.')
         return 0
 
 
