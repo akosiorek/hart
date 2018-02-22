@@ -28,13 +28,12 @@ import tensorflow as tf
 import neurocity as nct
 from neurocity.data import store
 from neurocity.data import tools as data_tools
-from parser import KittiTrackingParser
+from hart.data.kitti.parser import KittiTrackingParser
 
 try:
     from cv2 import imread, imresize
 except ImportError:
     from scipy.misc import imread, imresize
-
 
 def scatter(values, presence, choice=None, val_shape=None):
     """Scatters values in `values` according to the indicator vector `presence`.
@@ -99,9 +98,9 @@ def split_sequence_dict(data_dict, fraction=.5):
     """
     a, b = dict(), dict()
 
-    for k, v in data_dict.iteritems():
+    for k, v in data_dict.items():
         a[k], b[k] = [], []
-        for i in xrange(len(v)):
+        for i in range(len(v)):
             sa, sb = split_sequence(v[i], fraction)
             if sa is not None:
                 a[k].append(sa)
@@ -123,10 +122,10 @@ def resample_sequence_dict(data, max_len, overlap):
     of the same length and contains sequences. Matching sequences for different keys still match
     after resampling"""
 
-    for k, v in data.iteritems():
+    for k, v in data.items():
         # TODO: fix 0-length splits in split_seq_list
         data[k] = data_tools.split_seq_list(data[k], max_len, overlap)
-        for i in reversed(xrange(len(data[k]))):
+        for i in reversed(range(len(data[k]))):
             if len(data[k][i]) == 0:
                 del data[k][i]
     return data
@@ -141,7 +140,7 @@ def sample_permutations(data, size, num_samples):
     :return: list of permuted `data`
     """
 
-    perms = {tuple(np.random.permutation(data.shape[0])[:size]) for _ in xrange(num_samples)}
+    perms = {tuple(np.random.permutation(data.shape[0])[:size]) for _ in range(num_samples)}
     ws = [data[list(p)] for p in perms]
     return ws
 
@@ -157,8 +156,8 @@ def choose_n_objects(img_paths, bbox, presence, n_objects, choice_fun=default_ch
     obj_indices = np.where(presence[0])[0]
     obj_indices = choice_fun(obj_indices, n)
 
-    ip, b, p = outputs = [[] for _ in xrange(3)]
-    # other_data = [[] for _ in xrange(len(data))]
+    ip, b, p = outputs = [[] for _ in range(3)]
+    # other_data = [[] for _ in range(len(data))]
     for obj_index in obj_indices:
         pp = presence[:, obj_index]
 
@@ -213,14 +212,14 @@ def sequences(data, max_len=None, shuffle=True, overlap=0, max_objects=None, sam
             choice_fun = lambda x, n: sample_permutations(x, n,
                                                           max(1, abs(sample_objects) * (x.shape[0] // max_objects)))
         elif sample_objects >= 1:
-            choice_fun = lambda x, n: [x[np.random.permutation(x.shape[0])[:n]] for _ in xrange(sample_objects)]
+            choice_fun = lambda x, n: [x[np.random.permutation(x.shape[0])[:n]] for _ in range(sample_objects)]
         else:
             choice_fun = default_choice_fun
 
         keys = ['img_path', 'bbox', 'presence']
         ip, b, p = (data[k] for k in keys)
         new_data = {k: [] for k in keys}
-        for i in xrange(len(b)):
+        for i in range(len(b)):
             chosen = choose_n_objects(ip[i], b[i], p[i], max_objects, choice_fun)
             for l, k in zip(chosen, keys):
                 new_data[k].extend(l)
@@ -301,8 +300,8 @@ def process_entry(d, n_objects, img_store, depth_folder=None, bbox_scale=1.):
     del d['img_path']
 
     if d['mirror']:
-        for t in xrange(imgs.shape[0]):
-            for c in xrange(imgs.shape[-1]):
+        for t in range(imgs.shape[0]):
+            for c in range(imgs.shape[-1]):
                 imgs[t, ..., c] = np.fliplr(imgs[t, ..., c])
 
         for i, b in enumerate(bbox):
@@ -401,23 +400,23 @@ class KittiStore(store.CircularValueStore):
                 self.n_timesteps = n_timesteps
 
     def _filter_seqs(self, which_seqs):
-        for k, v in self.data_dict.iteritems():
+        for k, v in self.data_dict.items():
             self.data_dict[k] = [v[i] for i in which_seqs]
 
     def _mirror_reverse(self, data):
 
         # concat reversed sequences
         if self.reverse:
-            for k, v in data.iteritems():
+            for k, v in data.items():
                 reversed = [vv[::-1] for vv in v]
                 data[k].extend(reversed)
 
         # add mirroring info
-        n = len(data.values()[0])
+        n = len(list(data.values())[0])
         if not self.mirror:
             data['mirror'] = [False] * n
         else:
-            for k, v in data.iteritems():
+            for k, v in data.items():
                 data[k].extend(copy.deepcopy(v))
             data['mirror'] = [False] * n + [True] * n
         return data
@@ -445,7 +444,7 @@ class KittiStore(store.CircularValueStore):
 
             minibatch = tf.train.batch(sample, self.batch_size, dynamic_pad=True, capacity=2)
 
-            for k, v in minibatch.iteritems():
+            for k, v in minibatch.items():
                 unpacked = tf.unstack(v)
                 unpacked = [u[:, tf.newaxis] for u in unpacked]
                 minibatch[k] = tf.concat(axis=1, values=unpacked)

@@ -80,7 +80,7 @@ class CircularValueStore(object):
         self.mutex.acquire()
 
         self.keys = data_dict.keys()
-        self.values = data_dict.values()
+        self.values = list(data_dict.values())
 
         # ensure equal num of entries in each value vec
         for v in self.values[1:]:
