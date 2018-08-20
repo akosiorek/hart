@@ -486,3 +486,24 @@ def get_data(img_folder, label_folder, train_fraction, img_size,
     test_store = make_store('test', test, test_timesteps, (n_threads // 2) + 1)
 
     return train_store, train_store.get_minibatch(), test_store, test_store.get_minibatch()
+#
+# if __name__ == '__main__':
+#
+#     img_dir = 'C:\\Projects\\kitti_tracking\\data_resized'
+#     label_dir = 'C:\\Projects\\kitti_tracking\\labels'
+#
+#     img_size = 187, 621, 3
+#     crop_size = 56, 56, 3
+#
+#     rnn_units = 100
+#     norm = 'batch'
+#     keep_prob = .75
+#
+#     n_timesteps = 60
+#
+#     batch_size = 1
+#
+#     train_store, train, test_store, test = get_data(img_dir, label_dir, .8, img_size[:2], n_timesteps, n_timesteps,
+#                                                     batch_size, n_threads=3, in_memory=True, sample_objects=-100,
+#                                                     truncated_threshold=1., occluded_threshold=1, reverse=True,
+#                                                     mirror=True)
