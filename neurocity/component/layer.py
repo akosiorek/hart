@@ -420,7 +420,7 @@ class DynamicFilterConvLayer(Layer):
         self.ksize = ensure_square(ksize)
         self.n_cin = inpt_shape[-1]
         if n_filters is None:
-            n_filters = filter_shape[-1] / (np.prod(self.ksize)*inpt_shape[-1])
+            n_filters = np.round(filter_shape[-1] / (np.prod(self.ksize)*inpt_shape[-1])).astype(np.int32)
 
         self.strides = pad_shape(ensure_square(strides))
         assert filter_shape[-1] == self.n_cin * n_filters * np.prod(self.ksize)

@@ -19,7 +19,7 @@
 # 
 ########################################################################################
 
-from itertools import izip
+from itertools import zip_longest as izip
 
 import matplotlib
 import numpy as np

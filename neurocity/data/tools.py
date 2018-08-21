@@ -77,8 +77,8 @@ def shuffle_together(*lists):
         assert len(lists[0]) == len(l), 'Lenghts not equal!'
 
     index = np.random.permutation(len(lists[0]))
-    outputs = [list() for _ in xrange(len(lists))]
-    for i in xrange(len(outputs)):
+    outputs = [list() for _ in range(len(lists))]
+    for i in range(len(outputs)):
         for j in index:
             outputs[i].append(lists[i][j])
     return outputs

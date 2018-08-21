@@ -74,7 +74,7 @@ def make_expr_logger(sess, writer, num_batches, expr_dict, name, data_dict=None,
         for k, v in l.iteritems():
             l[k] /= num_batches_to_eval
         t = time.time() - start
-        print log(itr, l, t)
+        print(log(itr, l, t))
 
         if write:
             log_values(writer, itr, [tags[k] for k in l.keys()], l.values())
@@ -150,7 +150,7 @@ def check_id_swaps(bboxes, presence, factor=1.):
         margin = factor * std
         errors = np.where(np.greater(np.greater(db, margin).sum(-1).max(-1), 2))[0]
         if len(errors) > 0:
-            print 'Possible id swaps at frame(s) {} in seq {}'.format(errors + 1, i)
+            print('Possible id swaps at frame(s) {} in seq {}'.format(errors + 1, i))
 
 
 def image_series_summary(tag, imgs, max_timesteps=10):

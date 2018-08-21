@@ -48,7 +48,7 @@ def to_array_list(df, length=None, by_id=True):
     if length is None:
         length = max(idx) + 1
 
-    l = [np.empty(0) for _ in xrange(length)]
+    l = [np.empty(0) for _ in range(length)]
     for i in idx:
         a = df.loc[i]
         if by_id:
@@ -221,7 +221,7 @@ class KittiTrackingParser(object):
 
         if img_folder_or_paths is not None:
 
-            if isinstance(img_folder_or_paths, basestring):
+            if isinstance(img_folder_or_paths, str):
                 self.img_folder = img_folder_or_paths
                 img_folder_or_paths = self._get_img_paths()
 
@@ -230,7 +230,7 @@ class KittiTrackingParser(object):
         label_parts = [bbox, id, cls, occlusion, presence]
         if label_folder_or_labels is not None and any(label_parts):
 
-            if isinstance(label_folder_or_labels, basestring):
+            if isinstance(label_folder_or_labels, str):
                 self.label_folder = label_folder_or_labels
                 label_folder_or_labels = self._get_labels(truncated_threshold, occluded_threshold)
 
@@ -272,13 +272,13 @@ class KittiTrackingParser(object):
     def _extract_labels(self, label_parts):
         data = {k: [] for k, v in zip(('bbox', 'id', 'cls', 'occlusion', 'presence'), label_parts) if v}
         for l in self.labels:
-            for k, v in data.iteritems():
+            for k, v in data.items():
                 v.append(getattr(l, k))
         return data
 
     def _truncate_seqs(self):
         """Remove images not present in label sequences"""
-        for k, v in self.data_dict.iteritems():
+        for k, v in self.data_dict.items():
             for i, label in enumerate(self.labels):
                 if len(v[i]) != len(label.index):
                     self.data_dict[k][i] = v[i][label.index]
